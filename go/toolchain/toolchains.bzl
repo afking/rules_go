@@ -97,7 +97,7 @@ def _generate_toolchains():
       toolchain["link_flags"] += ["-s"]
       toolchain["cgo_link_flags"] += ["-shared", "-Wl,-all_load"]
     if "linux" in toolchain["host"]:
-      toolchain["cgo_link_flags"] += ["-Wl,-whole-archive"]
+      toolchain["cgo_link_flags"] += ["-Wl,-whole-archive", "-no-pie"]
 
   return toolchains
 
